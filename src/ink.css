@@ -1,0 +1,34 @@
+/* =====================================================================
+   Ink — a calm design system for reading. Authoring entry point.
+   =====================================================================
+
+   Put the mode class on <html>:
+
+     <html lang="en" class="ink-paper">   dark ink on light paper
+     <html lang="en" class="ink-night">     light ink on dark paper
+
+   With no stored choice, start in Night when prefers-color-scheme is dark
+   and in Paper otherwise, and follow the system if it changes.
+
+   By default the grounds stop one step short of pure white and pure
+   black. Add "ink-full" to <html> for the full range (pure paper, pure
+   ink); a display that reports itself as grayscale gets it by itself.
+
+   For anything shipped, use dist/ink.css (flattened, no @import). */
+
+@import url("fonts/ink.css");
+@import url("tokens/shared.css");
+
+@import url("tokens/paper.css");
+@import url("tokens/paper-full.css");
+@import url("tokens/night.css");
+@import url("tokens/night-full.css");
+
+@import url("base.css");
+@import url("type.css");
+@import url("components/icons.css");
+@import url("components/actions.css");
+@import url("components/reading.css");
+@import url("components/surfaces.css");
+@import url("components/forms.css");
+@import url("components/feedback.css");

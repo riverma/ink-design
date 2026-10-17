@@ -1,0 +1,13 @@
+/* Ink Night at the full range, turned over. */
+
+@media (monochrome) {
+  .ink-night {
+    --ground: var(--gray-0);
+    --ink: var(--gray-15);
+  }
+}
+
+.ink-night.ink-full {
+  --ground: var(--gray-0);
+  --ink: var(--gray-15);
+}

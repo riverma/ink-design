@@ -1,0 +1,81 @@
+/* Ink — shared tokens. Everything here is the same in Paper and Night.
+
+   The palette is ink and water: sixteen levels of gray, 0x00 to 0xFF in
+   steps of 0x11, and nothing between them. A small, fixed set keeps every
+   page in one quiet register. tools/check-stillness.mjs fails any other
+   color anywhere in src/. */
+
+:root {
+  --gray-0:  #000000;
+  --gray-1:  #111111;
+  --gray-2:  #222222;
+  --gray-3:  #333333;
+  --gray-4:  #444444;
+  --gray-5:  #555555;
+  --gray-6:  #666666;
+  --gray-7:  #777777;
+  --gray-8:  #888888;
+  --gray-9:  #999999;
+  --gray-10: #aaaaaa;
+  --gray-11: #bbbbbb;
+  --gray-12: #cccccc;
+  --gray-13: #dddddd;
+  --gray-14: #eeeeee;
+  --gray-15: #ffffff;
+
+  /* Space. A 4px base; generous, because margins are the only depth. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Corners stay rounded (an Ahimsa law), but small: a page, not a pill. */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-pill: 999px;
+
+  /* Strokes. Nothing thinner than one CSS pixel: a hairline fades on many
+     screens and for many eyes. Controls are drawn twice as heavy as rules. */
+  --stroke: 1px;
+  --stroke-control: 2px;
+  --stroke-focus: 3px;
+
+  /* Type. The book and the device. */
+  --font-book: "Lora", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Weights run a notch heavier than usual, so strokes stay firm in gray
+     and in Night, and for tired eyes. */
+  --weight-body: 450;
+  --weight-ui: 500;
+  --weight-heading: 650;
+  --weight-strong: 700;
+
+  --size-label: 0.875rem;
+  --size-caption: 0.9375rem;
+  --size-ui: 1.0625rem;
+  --size-body: 1.125rem;
+  --size-lead: 1.375rem;
+  --size-h3: 1.375rem;
+  --size-h2: 1.875rem;
+  --size-h1: 2.625rem;
+  --size-title: clamp(3rem, 2.2rem + 3.2vw, 5rem);
+
+  --leading-tight: 1.15;
+  --leading-ui: 1.35;
+  --leading-body: 1.6;
+
+  /* Text runs the full width it is given. Set a rem value to cap the
+     line length, for example 38rem for about 70 characters of Lora. */
+  --measure: 100%;
+
+  /* A touch target, generous enough for a tired or unsteady hand. */
+  --hit: 48px;
+
+  /* There are no motion tokens. Nothing in Ink moves. */
+}

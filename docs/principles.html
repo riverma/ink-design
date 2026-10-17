@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>Principles — Ink Design System</title>
+<meta name="description" content="The six principles Ink is built on, and the ten patterns it refuses.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html">Overview</a>
+      <a class="ink-link" href="principles.html" aria-current="page">Principles</a>
+      <a class="ink-link" href="foundations.html">Foundations</a>
+      <a class="ink-link" href="components.html">Components</a>
+      <a class="ink-link" href="themer.html">Themer</a>
+      <a class="ink-link" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero hero--slim">
+      <div class="hero__copy">
+        <p class="ink-caps">The principles</p>
+        <h1 class="ink-title">Drawn once, and left alone.</h1>
+        <p class="ink-lead">Most interfaces are built to hold attention: they move, glow, count and refresh. Ink is built to give attention back. Each rule here removes something that asks for the eye, so what remains is the text and the reader.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="six">
+      <p class="ink-caps">Six principles</p>
+      <h2 class="ink-h2">What Ink promises</h2>
+      <ol class="rules">
+        <li><span class="rules__n" aria-hidden="true">1</span><div><h3 class="ink-h3">Ink or paper.</h3><p class="ink-body ink-secondary">Every mark is one of sixteen grays, and most of a page is just two: the ink and the paper it sits on.</p></div></li>
+        <li><span class="rules__n" aria-hidden="true">2</span><div><h3 class="ink-h3">Nothing moves.</h3><p class="ink-body ink-secondary">A change happens in one step, never as a transition. Movement pulls the eye whether the reader wants to look or not, so there is none.</p></div></li>
+        <li><span class="rules__n" aria-hidden="true">3</span><div><h3 class="ink-h3">Pages, not scroll.</h3><p class="ink-body ink-secondary">Long content arrives a page at a time with the count in view, and turning a page changes all of it at once. A page can be finished. Then it ends.</p></div></li>
+        <li><span class="rules__n" aria-hidden="true">4</span><div><h3 class="ink-h3">A press is black and white.</h3><p class="ink-body ink-secondary">Feedback inverts the control, ink for paper and paper for ink, at once. It is unmistakable, and it asks for nothing more.</p></div></li>
+        <li><span class="rules__n" aria-hidden="true">5</span><div><h3 class="ink-h3">Type is the interface.</h3><p class="ink-body ink-secondary">Lora for anything read, Atkinson Hyperlegible Next for anything operated. A notch heavier than usual, large, and well leaded.</p></div></li>
+        <li><span class="rules__n" aria-hidden="true">6</span><div><h3 class="ink-h3">Still is free.</h3><p class="ink-body ink-secondary">Nothing ticks, refreshes or updates itself. A page left alone stays as it was left, and asks for nothing.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="sec" id="refused">
+      <p class="ink-caps">Refused</p>
+      <h2 class="ink-h2">Ten things Ink leaves out</h2>
+      <p class="ink-body">None of them has a token or a class in this system. Most are also checked: <code>tools/check-stillness.mjs</code> fails the build on any gradient, shadow, blur, partial opacity, transition, animation, hover state, thin weight or color that is not one of the sixteen levels.</p>
+      <div class="refuse">
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Transitions and animation</h3>
+          <p><strong>Why not:</strong> Motion draws the eye on its own schedule, not the reader’s. Even a short fade asks to be watched.</p>
+          <p><strong>Instead:</strong> Change state in one step. A press is an instant inversion.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Scrolling feeds, smooth and infinite</h3>
+          <p><strong>Why not:</strong> A scroll has no natural place to stop, and an infinite feed is built so that there is none.</p>
+          <p><strong>Instead:</strong> Pages, with the count in view (<code>.ink-pager</code>), and an ending (<code>.ink-end</code>).</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Gradients</h3>
+          <p><strong>Why not:</strong> A gradient is decoration that never settles on a value. Ink on paper is flat.</p>
+          <p><strong>Instead:</strong> A flat level, or a rule.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Shadows and blur</h3>
+          <p><strong>Why not:</strong> A shadow lifts a card off the page to make it louder than its neighbors. Nothing here needs to be louder.</p>
+          <p><strong>Instead:</strong> A one-pixel ink border, and space.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Transparency</h3>
+          <p><strong>Why not:</strong> Translucent ink lands on a gray nobody chose, which changes with whatever lies beneath it.</p>
+          <p><strong>Instead:</strong> Name the level you mean.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Hover states</h3>
+          <p><strong>Why not:</strong> Touch has no hover, and many readers never point. Anything revealed on hover is hidden from them.</p>
+          <p><strong>Instead:</strong> Every control is visible and labeled at rest.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Meaning in color</h3>
+          <p><strong>Why not:</strong> There is no hue here to carry it, and many readers cannot see hue anyway.</p>
+          <p><strong>Instead:</strong> Words first, then shape, fill and border style: dashed means look again; filled means on.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Live clocks, counters and shimmer</h3>
+          <p><strong>Why not:</strong> Every tick is a small demand: a movement in the corner of the eye, attention pulled.</p>
+          <p><strong>Instead:</strong> Show the time or the count when asked. Loading says “Loading” and holds still.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Carousels and autoplay</h3>
+          <p><strong>Why not:</strong> They move by themselves, and they decide when the reader has finished looking.</p>
+          <p><strong>Instead:</strong> A page the person turns.</p>
+        </div>
+        <div class="refuse__row">
+          <h3 class="ink-h3 refuse__name"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg> Hairlines and thin weights</h3>
+          <p><strong>Why not:</strong> Strokes thinner than a pixel, and weights below 400, fade on many screens and for many eyes.</p>
+          <p><strong>Instead:</strong> Rules of at least 1px, control edges of 2px, body text at 450.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="test">
+      <p class="ink-caps">The test</p>
+      <h2 class="ink-h2">Would it look right drawn once?</h2>
+      <div class="callout">
+        <p class="ink-lead"><a class="ink-link" href="https://ahimsa-design.riverma.com">Ahimsa</a> asks of every change: <em>did the person cause this, here, now?</em> Ink adds a question for every screen: <strong>would this look right if it were drawn once, and not again until someone touched it?</strong> If the answer is no, the design depends on motion to hold the eye.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="inherited">
+      <p class="ink-caps">From Ahimsa</p>
+      <h2 class="ink-h2">Laws carried over unchanged</h2>
+      <p class="ink-body">These come from the <a class="ink-link" href="https://ahimsa-design.riverma.com">Ahimsa design system</a>, unchanged.</p>
+      <ul class="ink-body list">
+        <li>Nothing appears unasked: no modal on load, no toast, no <code>role="alert"</code>, no autoplay, no <code>setInterval</code>. The attention gate runs here too.</li>
+        <li>No red, and no danger token. Something that needs a look goes dashed.</li>
+        <li>Components read semantic tokens only, so markup moves between Paper and Night untouched.</li>
+        <li>Corners stay rounded.</li>
+        <li>Nothing is loaded over a network. The offline gate runs here too.</li>
+        <li>No pure black or pure white by default, so there is no glare and no smear. When the full range is wanted, <code>ink-full</code> opens the grounds to pure paper and pure ink.</li>
+      </ul>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

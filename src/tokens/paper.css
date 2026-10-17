@@ -1,0 +1,39 @@
+/* Ink Paper — dark ink on light paper. The default, as a page has
+   always been.
+
+   --ground and --ink are the two levels everything else leans on. By
+   default they stop one step short of the extremes (no pure white to
+   glare, no pure black to smear, as in Ahimsa). With .ink-full,
+   paper-full.css opens them to the full range. */
+
+.ink-paper {
+  color-scheme: light;
+
+  --ground: var(--gray-14);
+  --ink: var(--gray-1);
+
+  /* Surfaces */
+  --surface-canvas: var(--ground);
+  --surface-raised: var(--ground);
+  --surface-sunk: var(--gray-13);
+  --surface-inverse: var(--ink);
+
+  /* Text. --text-secondary still clears 7:1. */
+  --text-heading: var(--ink);
+  --text-body: var(--ink);
+  --text-secondary: var(--gray-4);
+  --text-inverse: var(--ground);
+
+  /* Non-text. --mark-muted is for idle marks (leader dots, an empty
+     step), never type. --rule is a decorative separator and carries no
+     information; --border-control draws the edge of anything you touch. */
+  --mark-muted: var(--gray-7);
+  --rule: var(--gray-9);
+  --rule-strong: var(--ink);
+  --border-control: var(--ink);
+  --focus-ring: var(--ink);
+
+  /* Selection and press are an inversion: two levels, nothing between. */
+  --selected-fill: var(--ink);
+  --on-selected: var(--ground);
+}

@@ -1,0 +1,408 @@
+[
+ {
+  "family": "Literata",
+  "kind": "book",
+  "slug": "Literata",
+  "ofl": "OFL-literata.txt",
+  "faces": [
+   {
+    "file": "Literata-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Literata-Latin.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": true,
+  "wght": [
+   200,
+   900
+  ],
+  "note": "Made for long reading on screens. Optical sizes."
+ },
+ {
+  "family": "Source Serif 4",
+  "kind": "book",
+  "slug": "SourceSerif4",
+  "ofl": "OFL-sourceserif4.txt",
+  "faces": [
+   {
+    "file": "SourceSerif4-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "SourceSerif4-Latin.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": true,
+  "wght": [
+   200,
+   900
+  ],
+  "note": "A sturdy text serif with optical sizes; even color."
+ },
+ {
+  "family": "Newsreader",
+  "kind": "book",
+  "slug": "Newsreader",
+  "ofl": "OFL-newsreader.txt",
+  "faces": [
+   {
+    "file": "Newsreader-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 800",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Newsreader-Latin.woff2",
+    "style": "normal",
+    "weight": "200 800",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": true,
+  "wght": [
+   200,
+   800
+  ],
+  "note": "Made for on-screen news reading. Optical sizes."
+ },
+ {
+  "family": "EB Garamond",
+  "kind": "book",
+  "slug": "EBGaramond",
+  "ofl": "OFL-ebgaramond.txt",
+  "faces": [
+   {
+    "file": "EBGaramond-LatinExt.woff2",
+    "style": "normal",
+    "weight": "400 800",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "EBGaramond-Latin.woff2",
+    "style": "normal",
+    "weight": "400 800",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   400,
+   800
+  ],
+  "note": "A revival of Garamond: the classic book page."
+ },
+ {
+  "family": "Crimson Pro",
+  "kind": "book",
+  "slug": "CrimsonPro",
+  "ofl": "OFL-crimsonpro.txt",
+  "faces": [
+   {
+    "file": "CrimsonPro-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "CrimsonPro-Latin.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   200,
+   900
+  ],
+  "note": "An old-style book face, light and lively."
+ },
+ {
+  "family": "Alegreya",
+  "kind": "book",
+  "slug": "Alegreya",
+  "ofl": "OFL-alegreya.txt",
+  "faces": [
+   {
+    "file": "Alegreya-LatinExt.woff2",
+    "style": "normal",
+    "weight": "400 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Alegreya-Latin.woff2",
+    "style": "normal",
+    "weight": "400 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   400,
+   900
+  ],
+  "note": "Calligraphic and warm, designed for literature."
+ },
+ {
+  "family": "Lora",
+  "kind": "book",
+  "slug": "Lora",
+  "ofl": "OFL-lora.txt",
+  "faces": [
+   {
+    "file": "Lora-LatinExt.woff2",
+    "style": "normal",
+    "weight": "400 700",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Lora-Latin.woff2",
+    "style": "normal",
+    "weight": "400 700",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": true,
+  "opsz": false,
+  "wght": [
+   400,
+   700
+  ],
+  "note": "A brushed contemporary serif, moderate contrast."
+ },
+ {
+  "family": "Merriweather",
+  "kind": "book",
+  "slug": "Merriweather",
+  "ofl": "OFL-merriweather.txt",
+  "faces": [
+   {
+    "file": "Merriweather-LatinExt.woff2",
+    "style": "normal",
+    "weight": "300 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Merriweather-Latin.woff2",
+    "style": "normal",
+    "weight": "300 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": true,
+  "wght": [
+   300,
+   900
+  ],
+  "note": "Large, sturdy and open, drawn for screens. Optical sizes."
+ },
+ {
+  "family": "Atkinson Hyperlegible Next",
+  "kind": "ui",
+  "slug": "AtkinsonHyperlegibleNext",
+  "ofl": "OFL-atkinsonhyperlegiblenext.txt",
+  "faces": [
+   {
+    "file": "AtkinsonHyperlegibleNext-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 800",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "AtkinsonHyperlegibleNext-Latin.woff2",
+    "style": "normal",
+    "weight": "200 800",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": true,
+  "opsz": false,
+  "wght": [
+   200,
+   800
+  ],
+  "note": "Letters drawn to stay distinct at low vision."
+ },
+ {
+  "family": "Inter",
+  "kind": "ui",
+  "slug": "Inter",
+  "ofl": "OFL-inter.txt",
+  "faces": [
+   {
+    "file": "Inter-LatinExt.woff2",
+    "style": "normal",
+    "weight": "100 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Inter-Latin.woff2",
+    "style": "normal",
+    "weight": "100 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": true,
+  "wght": [
+   100,
+   900
+  ],
+  "note": "A neutral interface face, tall and open. Optical sizes."
+ },
+ {
+  "family": "Source Sans 3",
+  "kind": "ui",
+  "slug": "SourceSans3",
+  "ofl": "OFL-sourcesans3.txt",
+  "faces": [
+   {
+    "file": "SourceSans3-LatinExt.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "SourceSans3-Latin.woff2",
+    "style": "normal",
+    "weight": "200 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   200,
+   900
+  ],
+  "note": "A humanist sans with a long, calm text history."
+ },
+ {
+  "family": "Lexend",
+  "kind": "ui",
+  "slug": "Lexend",
+  "ofl": "OFL-lexend.txt",
+  "faces": [
+   {
+    "file": "Lexend-LatinExt.woff2",
+    "style": "normal",
+    "weight": "100 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Lexend-Latin.woff2",
+    "style": "normal",
+    "weight": "100 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   100,
+   900
+  ],
+  "note": "Spaced and shaped to ease reading proficiency."
+ },
+ {
+  "family": "IBM Plex Sans",
+  "kind": "ui",
+  "slug": "IBMPlexSans",
+  "ofl": "OFL-ibmplexsans.txt",
+  "faces": [
+   {
+    "file": "IBMPlexSans-LatinExt.woff2",
+    "style": "normal",
+    "weight": "100 700",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "IBMPlexSans-Latin.woff2",
+    "style": "normal",
+    "weight": "100 700",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   100,
+   700
+  ],
+  "note": "Engineered and grotesque, with a human hand."
+ },
+ {
+  "family": "Figtree",
+  "kind": "ui",
+  "slug": "Figtree",
+  "ofl": "OFL-figtree.txt",
+  "faces": [
+   {
+    "file": "Figtree-LatinExt.woff2",
+    "style": "normal",
+    "weight": "300 900",
+    "range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "subset": "latin-ext"
+   },
+   {
+    "file": "Figtree-Latin.woff2",
+    "style": "normal",
+    "weight": "300 900",
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "subset": "latin"
+   }
+  ],
+  "system": false,
+  "opsz": false,
+  "wght": [
+   300,
+   900
+  ],
+  "note": "Friendly geometric, clean and light."
+ }
+]

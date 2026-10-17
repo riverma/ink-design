@@ -1,0 +1,115 @@
+/* Ink — forms. Every control has a 2px ink edge, a visible label and a
+   state you can read without remembering what it looked like before. */
+
+.ink-field { display: grid; gap: var(--space-2); }
+.ink-label {
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-strong);
+  color: var(--text-body);
+}
+.ink-hint {
+  font-family: var(--font-ui);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-ui);
+  color: var(--text-secondary);
+}
+
+.ink-input {
+  min-height: var(--hit);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  color: var(--text-body);
+  background: var(--surface-canvas);
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-s);
+}
+.ink-input::placeholder { color: var(--text-secondary); font-style: italic; opacity: 1; }
+/* Something to look at: the edge goes dashed. No red, and no shake. */
+.ink-input[aria-invalid="true"] { border-style: dashed; }
+
+/* Checkbox: a box, and a check drawn in it when it is on. */
+.ink-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--hit);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  cursor: pointer;
+}
+.ink-check input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.ink-check__box {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-s);
+  background: var(--surface-canvas);
+}
+.ink-check input:checked + .ink-check__box { background: var(--selected-fill); }
+.ink-check input:checked + .ink-check__box::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--on-selected);
+  -webkit-mask: var(--mask-check) center / contain no-repeat;
+  mask: var(--mask-check) center / contain no-repeat;
+}
+.ink-check input:focus-visible + .ink-check__box {
+  outline: var(--stroke-focus) solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Switch: the track fills when it is on, and the word says which. */
+.ink-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--hit);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  cursor: pointer;
+}
+.ink-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.ink-switch__track {
+  position: relative;
+  flex: none;
+  width: 52px;
+  height: 30px;
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-pill);
+  background: var(--surface-canvas);
+}
+.ink-switch__track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: var(--stroke-control) solid var(--border-control);
+  background: var(--surface-canvas);
+}
+.ink-switch input:checked + .ink-switch__track { background: var(--selected-fill); }
+.ink-switch input:checked + .ink-switch__track::after {
+  left: auto;
+  right: 3px;
+  border-color: var(--on-selected);
+  background: var(--on-selected);
+}
+.ink-switch input:focus-visible + .ink-switch__track {
+  outline: var(--stroke-focus) solid var(--focus-ring);
+  outline-offset: 3px;
+}
+.ink-switch__state {
+  min-width: 2.2em;
+  font-weight: var(--weight-strong);
+}

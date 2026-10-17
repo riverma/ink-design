@@ -1,0 +1,28 @@
+/* Ink — feedback. A notice sits in the page where the person caused it,
+   and stays there until they move on. It never floats, never times out
+   and never announces itself (an Ahimsa law). */
+
+.ink-notice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-4);
+  align-items: start;
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface-canvas);
+  color: var(--text-body);
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-m);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  line-height: var(--leading-ui);
+}
+.ink-notice__glyph { line-height: 0; padding-top: 1px; }
+.ink-notice__actions {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+/* Something to look at: dashed, never alarm. */
+.ink-notice--note { border-style: dashed; }

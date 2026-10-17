@@ -1,0 +1,63 @@
+/* Ink — base. The smallest reset plus the accessibility floor every
+   component inherits. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Never a px font-size on :root: the scale is rem, so a person's own
+   text size setting still works. */
+html { -webkit-text-size-adjust: 100%; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--surface-canvas);
+}
+
+body {
+  font-family: var(--font-book);
+  font-size: var(--size-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+  color: var(--text-body);
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, textarea, select { font: inherit; color: inherit; }
+/* hidden means hidden, whatever display a component sets. */
+[hidden] { display: none !important; }
+strong, b { font-weight: var(--weight-strong); }
+button, [role="button"], [role="checkbox"], [role="switch"] { touch-action: manipulation; }
+
+/* Focus: always visible, solid ink, thick enough to find at a glance. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: var(--stroke-focus) solid var(--focus-ring);
+  outline-offset: 3px;
+}
+:where(a, button, input, textarea, select, summary, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
+}
+
+::selection { background: var(--selected-fill); color: var(--on-selected); }
+
+.ink-visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* There is no reduced-motion block because there is no motion to reduce.
+   tools/check-stillness.mjs keeps it that way. */
+
+/* Forced colors: hand everything to the person's own palette. */
+@media (forced-colors: active) {
+  .ink-btn, .ink-chip, .ink-card, .ink-notice, .ink-input, .ink-check__box, .ink-switch__track {
+    border-color: CanvasText !important;
+  }
+  .ink-btn--primary { background: ButtonText !important; color: ButtonFace !important; }
+  .ink-chip[aria-pressed="true"], .ink-btn:active { background: Highlight !important; color: HighlightText !important; }
+  :focus-visible { outline: var(--stroke-focus) solid Highlight !important; }
+}

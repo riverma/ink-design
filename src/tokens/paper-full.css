@@ -1,0 +1,15 @@
+/* Ink Paper at the full range: pure paper and pure ink, for the
+   strongest contrast. Opt in with .ink-full; a grayscale display gets it
+   by itself. */
+
+@media (monochrome) {
+  .ink-paper {
+    --ground: var(--gray-15);
+    --ink: var(--gray-0);
+  }
+}
+
+.ink-paper.ink-full {
+  --ground: var(--gray-15);
+  --ink: var(--gray-0);
+}

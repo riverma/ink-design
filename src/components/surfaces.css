@@ -1,0 +1,43 @@
+/* Ink — surfaces. No shadows: depth is a rule, a border and a margin.
+   A shadow lifts a card to make it louder than its neighbors, and nothing
+   here needs to be louder. */
+
+.ink-card {
+  padding: var(--space-5);
+  background: var(--surface-raised);
+  color: var(--text-body);
+  border: var(--stroke) solid var(--rule-strong);
+  border-radius: var(--radius-m);
+}
+.ink-card--sunk {
+  background: var(--surface-sunk);
+  border-color: transparent;
+}
+.ink-card > :first-child { margin-top: 0; }
+.ink-card > :last-child { margin-bottom: 0; }
+
+/* A list of rows, as in a settings screen: one rule between each, every
+   row a full touch target. */
+.ink-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--stroke) solid var(--rule);
+}
+.ink-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: calc(var(--hit) + var(--space-3));
+  padding: var(--space-2) 0;
+  border-bottom: var(--stroke) solid var(--rule);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+}
+.ink-list__hint {
+  display: block;
+  font-size: var(--size-caption);
+  color: var(--text-secondary);
+}

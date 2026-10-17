@@ -1,0 +1,120 @@
+/* Ink — type. Type is most of the interface, so it gets most of the care.
+   Lora for anything read; Atkinson Hyperlegible Next for anything
+   operated. */
+
+.ink-title {
+  margin: 0;
+  font-family: var(--font-book);
+  font-size: var(--size-title);
+  font-weight: var(--weight-heading);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--text-heading);
+  text-wrap: balance;
+}
+.ink-h1, .ink-h2, .ink-h3 {
+  margin: 0;
+  font-family: var(--font-book);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-tight);
+  color: var(--text-heading);
+  text-wrap: balance;
+}
+.ink-h1 { font-size: var(--size-h1); letter-spacing: -0.01em; }
+.ink-h2 { font-size: var(--size-h2); }
+.ink-h3 { font-size: var(--size-h3); }
+
+.ink-lead { font-size: var(--size-lead); line-height: 1.5; color: var(--text-body); }
+.ink-body { font-size: var(--size-body); line-height: var(--leading-body); }
+.ink-secondary { color: var(--text-secondary); }
+.ink-italic { font-style: italic; }
+
+/* The device voice: controls, labels, folios. */
+.ink-ui {
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  line-height: var(--leading-ui);
+}
+.ink-caption {
+  font-family: var(--font-ui);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-ui);
+  line-height: var(--leading-ui);
+  color: var(--text-secondary);
+}
+/* Small capitals are drawn, not faked: neither face ships them, so this
+   is uppercase sans, spaced out. */
+.ink-caps {
+  font-family: var(--font-ui);
+  font-size: var(--size-label);
+  font-weight: var(--weight-strong);
+  line-height: var(--leading-ui);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Book prose: a measure, paragraphs indented rather than spaced, and
+   hyphenation where the language allows. Ragged right, because even
+   spacing reads better than a straight edge (WCAG 1.4.8). */
+.ink-prose {
+  max-width: var(--measure);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  hyphens: auto;
+  hanging-punctuation: first;
+}
+.ink-prose p { margin: 0; }
+.ink-prose p + p { text-indent: 1.5em; }
+.ink-prose > * + :not(p) { margin-top: var(--space-5); }
+.ink-prose > :not(p) + p { margin-top: var(--space-5); }
+
+/* A drop capital, three lines deep. */
+/* flow-root keeps the capital inside its own paragraph, however short. */
+.ink-dropcap { display: flow-root; }
+.ink-dropcap::first-letter {
+  float: left;
+  font-size: 4.1em;
+  line-height: 0.82;
+  font-weight: var(--weight-heading);
+  padding: 0.06em 0.08em 0 0;
+}
+
+.ink-quote {
+  margin: 0;
+  padding-left: var(--space-5);
+  border-left: var(--stroke-control) solid var(--rule-strong);
+  font-style: italic;
+}
+
+/* Rules and section breaks. */
+.ink-rule {
+  border: 0;
+  border-top: var(--stroke) solid var(--rule);
+  margin: var(--space-6) 0;
+}
+.ink-rule--strong { border-top: var(--stroke-control) solid var(--rule-strong); }
+.ink-dinkus {
+  border: 0;
+  margin: var(--space-6) 0;
+  text-align: center;
+  font-family: var(--font-book);
+  font-size: var(--size-lead);
+  line-height: 1;
+  color: var(--text-body);
+}
+.ink-dinkus::before { content: "*\2003*\2003*"; }
+
+.ink-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  border-radius: 2px;
+}
+.ink-link:active {
+  background: var(--selected-fill);
+  color: var(--on-selected);
+  text-decoration: none;
+}

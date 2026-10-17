@@ -1,0 +1,94 @@
+/* Ink — actions. A press is an inversion: ink fills, paper becomes ink.
+   Two levels and nothing between, so it is unmistakable, and instant,
+   because nothing in Ink transitions. */
+
+.ink-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--hit);
+  min-width: var(--hit);
+  padding: 0 var(--space-5);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-strong);
+  line-height: 1.2;
+  color: var(--text-body);
+  background: var(--surface-canvas);
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-s);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+.ink-btn:active {
+  background: var(--selected-fill);
+  color: var(--on-selected);
+}
+
+/* One per view: the thing the page is for. */
+.ink-btn--primary {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+}
+.ink-btn--primary:active {
+  background: var(--surface-canvas);
+  color: var(--text-body);
+}
+
+/* A quiet action reads as a word, and still inverts when pressed. */
+.ink-btn--quiet {
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+.ink-btn--quiet:active { text-decoration: none; }
+
+/* An icon-only button carries its name in .ink-visually-hidden. */
+.ink-btn--icon { padding: 0; width: var(--hit); }
+
+.ink-btn--wide { display: flex; width: 100%; }
+
+/* Disabled goes dashed, not faint: it stays readable. */
+.ink-btn:disabled, .ink-btn[aria-disabled="true"] {
+  border-style: dashed;
+  background: var(--surface-canvas);
+  color: var(--text-secondary);
+  cursor: default;
+}
+
+/* Chips: one choice among a few. aria-pressed is the state; the
+   inversion and the drawn check both show it. */
+.ink-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  font-family: var(--font-ui);
+  font-size: var(--size-ui);
+  font-weight: var(--weight-ui);
+  line-height: 1.2;
+  color: var(--text-body);
+  background: var(--surface-canvas);
+  border: var(--stroke-control) solid var(--border-control);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  user-select: none;
+}
+.ink-chip[aria-pressed="true"] {
+  background: var(--selected-fill);
+  color: var(--on-selected);
+  font-weight: var(--weight-strong);
+}
+.ink-chip[aria-pressed="true"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-left: calc(var(--space-1) * -1);
+  background: currentColor;
+  -webkit-mask: var(--mask-check) center / contain no-repeat;
+  mask: var(--mask-check) center / contain no-repeat;
+}

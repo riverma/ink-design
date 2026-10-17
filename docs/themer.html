@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>Themer — Ink Design System</title>
+<meta name="description" content="Try typefaces, sizes, weights and spacing against a page of Walden, then copy the tokens.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html">Overview</a>
+      <a class="ink-link" href="principles.html">Principles</a>
+      <a class="ink-link" href="foundations.html">Foundations</a>
+      <a class="ink-link" href="components.html">Components</a>
+      <a class="ink-link" href="themer.html" aria-current="page">Themer</a>
+      <a class="ink-link" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero hero--slim">
+      <div class="hero__copy">
+        <p class="ink-caps">Themer</p>
+        <h1 class="ink-title">Choose the type.</h1>
+        <p class="ink-lead">Type is most of this system, so choose it by reading. Try eight reading faces and six interface faces against a page of Walden, in Paper and Night, softened or at the full range. Every face here is self-hosted and open source.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="try">
+      <p class="ink-caps">Try it</p>
+      <h2 class="ink-h2">A page, set your way</h2>
+      <div class="themer" data-themer>
+        <script type="application/json" id="themer-data">{"defaults":{"book":"Lora","ui":"Atkinson Hyperlegible Next","size":18,"weight":450,"heading":650,"uiw":500,"leading":1.6,"measure":61},"fonts":{"Literata":{"kind":"book","stack":"\"Literata\", Georgia, serif","about":"Weights 200–900 · optical sizes","note":"Made for long reading on screens. Optical sizes.","system":false,"files":["Literata-LatinExt.woff2","Literata-Latin.woff2"],"ofl":"OFL-literata.txt"},"Source Serif 4":{"kind":"book","stack":"\"Source Serif 4\", Georgia, serif","about":"Weights 200–900 · optical sizes","note":"A sturdy text serif with optical sizes; even color.","system":false,"files":["SourceSerif4-LatinExt.woff2","SourceSerif4-Latin.woff2"],"ofl":"OFL-sourceserif4.txt"},"Newsreader":{"kind":"book","stack":"\"Newsreader\", Georgia, serif","about":"Weights 200–800 · optical sizes","note":"Made for on-screen news reading. Optical sizes.","system":false,"files":["Newsreader-LatinExt.woff2","Newsreader-Latin.woff2"],"ofl":"OFL-newsreader.txt"},"EB Garamond":{"kind":"book","stack":"\"EB Garamond\", Georgia, serif","about":"Weights 400–800","note":"A revival of Garamond: the classic book page.","system":false,"files":["EBGaramond-LatinExt.woff2","EBGaramond-Latin.woff2"],"ofl":"OFL-ebgaramond.txt"},"Crimson Pro":{"kind":"book","stack":"\"Crimson Pro\", Georgia, serif","about":"Weights 200–900","note":"An old-style book face, light and lively.","system":false,"files":["CrimsonPro-LatinExt.woff2","CrimsonPro-Latin.woff2"],"ofl":"OFL-crimsonpro.txt"},"Alegreya":{"kind":"book","stack":"\"Alegreya\", Georgia, serif","about":"Weights 400–900","note":"Calligraphic and warm, designed for literature.","system":false,"files":["Alegreya-LatinExt.woff2","Alegreya-Latin.woff2"],"ofl":"OFL-alegreya.txt"},"Lora":{"kind":"book","stack":"\"Lora\", Georgia, serif","about":"Weights 400–700","note":"A brushed contemporary serif, moderate contrast.","system":true,"files":["Lora-LatinExt.woff2","Lora-Latin.woff2"],"ofl":"OFL-lora.txt"},"Merriweather":{"kind":"book","stack":"\"Merriweather\", Georgia, serif","about":"Weights 300–900 · optical sizes","note":"Large, sturdy and open, drawn for screens. Optical sizes.","system":false,"files":["Merriweather-LatinExt.woff2","Merriweather-Latin.woff2"],"ofl":"OFL-merriweather.txt"},"Atkinson Hyperlegible Next":{"kind":"ui","stack":"\"Atkinson Hyperlegible Next\", system-ui, sans-serif","about":"Weights 200–800","note":"Letters drawn to stay distinct at low vision.","system":true,"files":["AtkinsonHyperlegibleNext-LatinExt.woff2","AtkinsonHyperlegibleNext-Latin.woff2"],"ofl":"OFL-atkinsonhyperlegiblenext.txt"},"Inter":{"kind":"ui","stack":"\"Inter\", system-ui, sans-serif","about":"Weights 100–900 · optical sizes","note":"A neutral interface face, tall and open. Optical sizes.","system":false,"files":["Inter-LatinExt.woff2","Inter-Latin.woff2"],"ofl":"OFL-inter.txt"},"Source Sans 3":{"kind":"ui","stack":"\"Source Sans 3\", system-ui, sans-serif","about":"Weights 200–900","note":"A humanist sans with a long, calm text history.","system":false,"files":["SourceSans3-LatinExt.woff2","SourceSans3-Latin.woff2"],"ofl":"OFL-sourcesans3.txt"},"Lexend":{"kind":"ui","stack":"\"Lexend\", system-ui, sans-serif","about":"Weights 100–900","note":"Spaced and shaped to ease reading proficiency.","system":false,"files":["Lexend-LatinExt.woff2","Lexend-Latin.woff2"],"ofl":"OFL-lexend.txt"},"IBM Plex Sans":{"kind":"ui","stack":"\"IBM Plex Sans\", system-ui, sans-serif","about":"Weights 100–700","note":"Engineered and grotesque, with a human hand.","system":false,"files":["IBMPlexSans-LatinExt.woff2","IBMPlexSans-Latin.woff2"],"ofl":"OFL-ibmplexsans.txt"},"Figtree":{"kind":"ui","stack":"\"Figtree\", system-ui, sans-serif","about":"Weights 300–900","note":"Friendly geometric, clean and light.","system":false,"files":["Figtree-LatinExt.woff2","Figtree-Latin.woff2"],"ofl":"OFL-figtree.txt"}}}</script>
+        <div class="themer__controls">
+          <fieldset class="themer__group">
+            <legend class="ink-caps">Reading face</legend>
+          <div class="themer__fonts" role="group" aria-label="Reading face" data-pick="book">
+            <button class="ink-chip" type="button" data-font="Literata" aria-pressed="false" style="font-family:&quot;Literata&quot;, Georgia, serif">Literata</button>
+            <button class="ink-chip" type="button" data-font="Source Serif 4" aria-pressed="false" style="font-family:&quot;Source Serif 4&quot;, Georgia, serif">Source Serif 4</button>
+            <button class="ink-chip" type="button" data-font="Newsreader" aria-pressed="false" style="font-family:&quot;Newsreader&quot;, Georgia, serif">Newsreader</button>
+            <button class="ink-chip" type="button" data-font="EB Garamond" aria-pressed="false" style="font-family:&quot;EB Garamond&quot;, Georgia, serif">EB Garamond</button>
+            <button class="ink-chip" type="button" data-font="Crimson Pro" aria-pressed="false" style="font-family:&quot;Crimson Pro&quot;, Georgia, serif">Crimson Pro</button>
+            <button class="ink-chip" type="button" data-font="Alegreya" aria-pressed="false" style="font-family:&quot;Alegreya&quot;, Georgia, serif">Alegreya</button>
+            <button class="ink-chip" type="button" data-font="Lora" aria-pressed="true" style="font-family:&quot;Lora&quot;, Georgia, serif">Lora</button>
+            <button class="ink-chip" type="button" data-font="Merriweather" aria-pressed="false" style="font-family:&quot;Merriweather&quot;, Georgia, serif">Merriweather</button>
+          </div>
+            <p class="ink-caption" data-about="book">Weights 400–700. A brushed contemporary serif, moderate contrast.</p>
+          </fieldset>
+          <fieldset class="themer__group">
+            <legend class="ink-caps">Interface face</legend>
+          <div class="themer__fonts" role="group" aria-label="Interface face" data-pick="ui">
+            <button class="ink-chip" type="button" data-font="Atkinson Hyperlegible Next" aria-pressed="true" style="font-family:&quot;Atkinson Hyperlegible Next&quot;, system-ui, sans-serif">Atkinson Hyperlegible Next</button>
+            <button class="ink-chip" type="button" data-font="Inter" aria-pressed="false" style="font-family:&quot;Inter&quot;, system-ui, sans-serif">Inter</button>
+            <button class="ink-chip" type="button" data-font="Source Sans 3" aria-pressed="false" style="font-family:&quot;Source Sans 3&quot;, system-ui, sans-serif">Source Sans 3</button>
+            <button class="ink-chip" type="button" data-font="Lexend" aria-pressed="false" style="font-family:&quot;Lexend&quot;, system-ui, sans-serif">Lexend</button>
+            <button class="ink-chip" type="button" data-font="IBM Plex Sans" aria-pressed="false" style="font-family:&quot;IBM Plex Sans&quot;, system-ui, sans-serif">IBM Plex Sans</button>
+            <button class="ink-chip" type="button" data-font="Figtree" aria-pressed="false" style="font-family:&quot;Figtree&quot;, system-ui, sans-serif">Figtree</button>
+          </div>
+            <p class="ink-caption" data-about="ui">Weights 200–800. Letters drawn to stay distinct at low vision.</p>
+          </fieldset>
+          <fieldset class="themer__group">
+            <legend class="ink-caps">Size and spacing</legend>
+            <label class="themer__range"><span class="themer__range-label">Body size <output data-out="size">18px</output></span><input type="range" min="16" max="24" step="0.5" value="18" data-key="size"></label>
+            <label class="themer__range"><span class="themer__range-label">Body weight <output data-out="weight">450</output></span><input type="range" min="400" max="600" step="10" value="450" data-key="weight"></label>
+            <label class="themer__range"><span class="themer__range-label">Leading <output data-out="leading">1.6</output></span><input type="range" min="1.3" max="1.9" step="0.05" value="1.6" data-key="leading"></label>
+            <label class="themer__range"><span class="themer__range-label">Measure <output data-out="measure">Full width</output></span><input type="range" min="26" max="61" step="1" value="61" data-key="measure"></label>
+            <label class="themer__range"><span class="themer__range-label">Heading weight <output data-out="heading">650</output></span><input type="range" min="400" max="800" step="50" value="650" data-key="heading"></label>
+            <label class="themer__range"><span class="themer__range-label">Interface weight <output data-out="uiw">500</output></span><input type="range" min="400" max="700" step="50" value="500" data-key="uiw"></label>
+          </fieldset>
+          <fieldset class="themer__group">
+            <legend class="ink-caps">Preview in</legend>
+            <div class="row" role="group" aria-label="Preview mode" data-preview-mode><button class="ink-chip" type="button" data-mode="paper" aria-pressed="true">Paper</button><button class="ink-chip" type="button" data-mode="night" aria-pressed="false">Night</button></div>
+            <label class="ink-check"><input type="checkbox" data-preview-full><span class="ink-check__box"></span>Full range</label>
+          </fieldset>
+        </div>
+        <div class="themer__preview ink-paper" data-preview>
+          <div class="ink-page">
+            <div class="ink-runninghead"><span>Walden</span><span>Where I Lived</span></div>
+            <div>
+              <h2 class="ink-h1 themer__heading">Where I Lived, and What I Lived For</h2>
+              <div class="ink-prose">
+                <p class="ink-dropcap">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+                <p>Our life is frittered away by detail. An honest man has hardly need to count more than his ten fingers, or in extreme cases he may add his ten toes, and lump the rest. Simplicity, simplicity, simplicity!</p>
+              </div>
+            </div>
+            <div class="stack">
+              <div class="row"><button class="ink-btn ink-btn--primary" type="button">Open book</button><button class="ink-btn" type="button">Contents</button><button class="ink-btn ink-btn--quiet" type="button">Not now</button></div>
+              <div class="row" role="group" aria-label="Turn pages by" data-chips><button class="ink-chip" type="button" aria-pressed="true">Tap</button><button class="ink-chip" type="button" aria-pressed="false">Swipe</button></div>
+              <p class="ink-caption">Bookmarked. Page 113, Solitude.</p>
+              <div class="ink-folio">Page 72 of 268</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="tokens">
+      <p class="ink-caps">Your tokens</p>
+      <h2 class="ink-h2">Copy the choice</h2>
+      <p class="ink-body">Paste this after <code>ink.css</code>. If you chose a face other than Lora or Atkinson Hyperlegible Next, ship its files and license too; the comment lists them. To see the choice everywhere, use it on every page of this site.</p>
+      <div class="snippet"><pre tabindex="0"><code data-themer-css></code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <div class="row themer__actions">
+        <button class="ink-btn ink-btn--primary" type="button" data-themer-apply>Use on every page</button>
+        <button class="ink-btn" type="button" data-themer-reset>Back to the defaults</button>
+      </div>
+      <p class="ink-caption" data-themer-status aria-live="polite">This site is using the defaults.</p>
+    </section>
+
+    <section class="sec" id="compare-book">
+      <p class="ink-caps">Compare</p>
+      <h2 class="ink-h2">Every reading face, side by side</h2>
+      <p class="ink-body">The same passage in each face, at the system’s size and weight. Look for even color across the line, open counters at small sizes, and italics that stay readable.</p>
+      <div class="grid2">
+        <div class="ink-card compare" style="font-family:&quot;Literata&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Literata</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 200–900 · optical sizes. Made for long reading on screens. Optical sizes.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Literata">Use Literata</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Source Serif 4&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Source Serif 4</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 200–900 · optical sizes. A sturdy text serif with optical sizes; even color.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Source Serif 4">Use Source Serif 4</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Newsreader&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Newsreader</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 200–800 · optical sizes. Made for on-screen news reading. Optical sizes.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Newsreader">Use Newsreader</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;EB Garamond&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">EB Garamond</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 400–800. A revival of Garamond: the classic book page.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="EB Garamond">Use EB Garamond</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Crimson Pro&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Crimson Pro</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 200–900. An old-style book face, light and lively.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Crimson Pro">Use Crimson Pro</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Alegreya&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Alegreya</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 400–900. Calligraphic and warm, designed for literature.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Alegreya">Use Alegreya</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Lora&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Lora</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 400–700. A brushed contemporary serif, moderate contrast.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Lora">Use Lora</button>
+        </div>
+        <div class="ink-card compare" style="font-family:&quot;Merriweather&quot;, Georgia, serif">
+          <p class="ink-caps compare__name">Merriweather</p>
+          <p class="compare__title">Simplicity</p>
+          <p class="compare__text">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+          <p class="compare__text ink-italic ink-secondary">Simplicity, simplicity, simplicity!</p>
+          <p class="ink-caption">Weights 300–900 · optical sizes. Large, sturdy and open, drawn for screens. Optical sizes.</p>
+          <button class="ink-btn" type="button" data-choose="book" data-font="Merriweather">Use Merriweather</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="compare-ui">
+      <p class="ink-caps">Compare</p>
+      <h2 class="ink-h2">Every interface face</h2>
+      <p class="ink-body">Interface text is short, small and often read at a glance. Look for an <em>I</em>, <em>l</em> and <em>1</em> that cannot be confused, and an <em>rn</em> that never reads as <em>m</em>.</p>
+      <div class="grid3">
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">Atkinson Hyperlegible Next</p>
+          <p class="compare__legible" style="font-family:&quot;Atkinson Hyperlegible Next&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;Atkinson Hyperlegible Next&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 200–800. Letters drawn to stay distinct at low vision.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="Atkinson Hyperlegible Next">Use Atkinson Hyperlegible Next</button>
+        </div>
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">Inter</p>
+          <p class="compare__legible" style="font-family:&quot;Inter&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;Inter&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 100–900 · optical sizes. A neutral interface face, tall and open. Optical sizes.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="Inter">Use Inter</button>
+        </div>
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">Source Sans 3</p>
+          <p class="compare__legible" style="font-family:&quot;Source Sans 3&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;Source Sans 3&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 200–900. A humanist sans with a long, calm text history.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="Source Sans 3">Use Source Sans 3</button>
+        </div>
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">Lexend</p>
+          <p class="compare__legible" style="font-family:&quot;Lexend&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;Lexend&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 100–900. Spaced and shaped to ease reading proficiency.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="Lexend">Use Lexend</button>
+        </div>
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">IBM Plex Sans</p>
+          <p class="compare__legible" style="font-family:&quot;IBM Plex Sans&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;IBM Plex Sans&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 100–700. Engineered and grotesque, with a human hand.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="IBM Plex Sans">Use IBM Plex Sans</button>
+        </div>
+        <div class="ink-card compare">
+          <p class="ink-caps compare__name">Figtree</p>
+          <p class="compare__legible" style="font-family:&quot;Figtree&quot;, system-ui, sans-serif" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+          <p class="compare__ui" style="font-family:&quot;Figtree&quot;, system-ui, sans-serif">Page 3 of 12 · Bookmarked · Search this book · Turn pages by tap</p>
+          <p class="ink-caption">Weights 300–900. Friendly geometric, clean and light.</p>
+          <button class="ink-btn" type="button" data-choose="ui" data-font="Figtree">Use Figtree</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+<script src="themer.js"></script>
+</body>
+</html>

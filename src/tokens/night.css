@@ -1,0 +1,35 @@
+/* Ink Night — light ink on dark paper. For reading at night with the
+   lamp low, and for people who read better inverted.
+
+   The same tokens as Paper, turned over. --ink here is still whatever
+   draws: light on a dark ground. */
+
+.ink-night {
+  color-scheme: dark;
+
+  --ground: var(--gray-1);
+  --ink: var(--gray-14);
+
+  /* Surfaces */
+  --surface-canvas: var(--ground);
+  --surface-raised: var(--ground);
+  --surface-sunk: var(--gray-2);
+  --surface-inverse: var(--ink);
+
+  /* Text */
+  --text-heading: var(--ink);
+  --text-body: var(--ink);
+  --text-secondary: var(--gray-11);
+  --text-inverse: var(--ground);
+
+  /* Non-text */
+  --mark-muted: var(--gray-7);
+  --rule: var(--gray-5);
+  --rule-strong: var(--ink);
+  --border-control: var(--ink);
+  --focus-ring: var(--ink);
+
+  /* Selection and press */
+  --selected-fill: var(--ink);
+  --on-selected: var(--ground);
+}

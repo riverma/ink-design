@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>Overview — Ink Design System</title>
+<meta name="description" content="Ink is a calm design system for reading: sixteen grays, nothing that moves, and pages instead of scroll.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html" aria-current="page">Overview</a>
+      <a class="ink-link" href="principles.html">Principles</a>
+      <a class="ink-link" href="foundations.html">Foundations</a>
+      <a class="ink-link" href="components.html">Components</a>
+      <a class="ink-link" href="themer.html">Themer</a>
+      <a class="ink-link" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="ink-caps">A design system for stillness</p>
+        <h1 class="ink-title">Ink on paper, for screens that are paper.</h1>
+        <p class="ink-lead">Ink is a calm design system for reading. It uses sixteen grays and no motion, and it pages instead of scrolling, so an interface sits as quietly on a screen as a well-set book.</p>
+        <div class="row">
+          <a class="ink-btn ink-btn--primary" href="principles.html">Read the principles</a>
+          <a class="ink-btn" href="components.html">See the components</a>
+        </div>
+      </div>
+      <div class="device" aria-hidden="true">
+        <div class="device__screen">
+          <div class="ink-page">
+            <div class="ink-runninghead"><span>Walden</span><span>Economy</span></div>
+            <div class="ink-prose">
+              <p class="ink-dropcap">When I wrote the following pages, or rather the bulk of them, I lived alone, in the woods, a mile from any neighbor, in a house which I had built myself, on the shore of Walden Pond, in Concord, Massachusetts, and earned my living by the labor of my hands only.</p>
+              <p>I lived there two years and two months. At present I am a sojourner in civilized life again.</p>
+            </div>
+            <div class="ink-folio">Page 1 of 268</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="practice">
+      <p class="ink-caps">The practice</p>
+      <h2 class="ink-h2">Five commitments, and why</h2>
+      <p class="ink-body">Ink rests on five commitments. Each has a reason, and each reason becomes a rule the build checks, so it does not have to be remembered.</p>
+      <ol class="facts">
+        <li><div><h3 class="ink-h3">Sixteen grays</h3><p class="ink-body ink-secondary">Ink on paper has always been enough to say anything. A small, fixed set of grays keeps every page in one quiet register, with nothing competing in hue.</p></div><div class="facts__so"><strong>So: Every color is one of the levels.</strong>The palette is exactly <code>--gray-0</code> to <code>--gray-15</code>, and each mode uses six.</div></li>
+        <li><div><h3 class="ink-h3">Stillness</h3><p class="ink-body ink-secondary">Movement on a page pulls the eye whether or not the reader wants to look. A page that holds still leaves attention where the reader put it.</p></div><div class="facts__so"><strong>So: Nothing moves, and a press is an inversion.</strong>No transitions or animation anywhere; pressed and selected states are a pure inversion.</div></li>
+        <li><div><h3 class="ink-h3">A page at a time</h3><p class="ink-body ink-secondary">A scroll has no edges and no end. A page has both: it can be read whole, and finished, as a book always could.</p></div><div class="facts__so"><strong>So: Content turns a page at a time.</strong>The whole page changes at once and the controls stay where they are.</div></li>
+        <li><div><h3 class="ink-h3">Clear in any light</h3><p class="ink-body ink-secondary">Words are for everyone: tired eyes, low vision, a dim room or bright sun. Clear contrast is a kindness, not a style.</p></div><div class="facts__so"><strong>So: Contrast floors are higher.</strong>All text clears 7:1, control edges 4.5:1, and the full range of pure paper and pure ink is one class away.</div></li>
+        <li><div><h3 class="ink-h3">Nothing asks</h3><p class="ink-body ink-secondary">An interface that ticks, refreshes and counts is asking for attention it was not given. Calm is mostly the absence of that asking.</p></div><div class="facts__so"><strong>So: Nothing updates itself.</strong>No clocks that tick, no live counters, no shimmer while loading. The page changes when someone touches it.</div></li>
+      </ol>
+    </section>
+
+    <section class="sec" id="modes">
+      <p class="ink-caps">Two modes</p>
+      <h2 class="ink-h2">Paper, and Night</h2>
+      <p class="ink-body">Same tokens, same components, same markup. Put <code>ink-paper</code> or <code>ink-night</code> on <code>&lt;html&gt;</code>. With no stored choice, Ink follows the operating system’s light or dark setting until the person picks one.</p>
+      <div class="pair">
+        <div class="ink-paper mini">
+          <p class="ink-caps">Ink Paper</p>
+          <p class="ink-h2">Dark on light</p>
+          <p class="ink-body">Ink on paper, as a page has always been.</p>
+          <div class="row"><button class="ink-btn ink-btn--primary" type="button">Open book</button><button class="ink-btn" type="button">Contents</button></div>
+          <div class="row" role="group" aria-label="Turn pages by" data-chips><button class="ink-chip" type="button" aria-pressed="false">Tap</button><button class="ink-chip" type="button" aria-pressed="true">Swipe</button></div>
+        </div>
+        <div class="ink-night mini">
+          <p class="ink-caps">Ink Night</p>
+          <p class="ink-h2">Light on dark</p>
+          <p class="ink-body">For reading at night, with the lamp low. The same tokens, turned over.</p>
+          <div class="row"><button class="ink-btn ink-btn--primary" type="button">Open book</button><button class="ink-btn" type="button">Contents</button></div>
+          <div class="row" role="group" aria-label="Turn pages by" data-chips><button class="ink-chip" type="button" aria-pressed="false">Tap</button><button class="ink-chip" type="button" aria-pressed="true">Swipe</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="principles">
+      <p class="ink-caps">Six principles</p>
+      <h2 class="ink-h2">Still, legible, finite</h2>
+      <div class="grid3">
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 H20 M9 12 H20 M9 18 H20"/><circle cx="4.5" cy="6" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.25" fill="currentColor" stroke="none"/></svg></p><h3 class="ink-h3">Ink or paper.</h3><p class="ink-body ink-secondary">Every mark is one of sixteen grays, and most of a page is just two: the ink and the paper it sits on.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg></p><h3 class="ink-h3">Nothing moves.</h3><p class="ink-body ink-secondary">A change happens in one step, never as a transition. Movement pulls the eye whether the reader wants to look or not, so there is none.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6 C9.5 4.5 6 4 3 5 V19 C6 18 9.5 18.5 12 20 C14.5 18.5 18 18 21 19 V5 C18 4 14.5 4.5 12 6 Z M12 6 V20"/></svg></p><h3 class="ink-h3">Pages, not scroll.</h3><p class="ink-body ink-secondary">Long content arrives a page at a time with the count in view, and turning a page changes all of it at once. A page can be finished. Then it ends.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7"/></svg></p><h3 class="ink-h3">A press is black and white.</h3><p class="ink-body ink-secondary">Feedback inverts the control, ink for paper and paper for ink, at once. It is unmistakable, and it asks for nothing more.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 L8 5 L13 19 M4.8 14 H11.2 M15 19 L18 10 L21 19 M16 16 H20"/></svg></p><h3 class="ink-h3">Type is the interface.</h3><p class="ink-body ink-secondary">Lora for anything read, Atkinson Hyperlegible Next for anything operated. A notch heavier than usual, large, and well leaded.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5 V4.5 M12 19.5 V21.5 M2.5 12 H4.5 M19.5 12 H21.5 M5.3 5.3 L6.7 6.7 M17.3 17.3 L18.7 18.7 M5.3 18.7 L6.7 17.3 M17.3 6.7 L18.7 5.3"/></svg></p><h3 class="ink-h3">Still is free.</h3><p class="ink-body ink-secondary">Nothing ticks, refreshes or updates itself. A page left alone stays as it was left, and asks for nothing.</p></div>
+      </div>
+      <p class="ink-body"><a class="ink-link" href="principles.html">What Ink refuses, and why</a></p>
+    </section>
+
+    <section class="sec" id="roots">
+      <p class="ink-caps">Where it comes from</p>
+      <h2 class="ink-h2">Books, and a simpler way</h2>
+      <p class="ink-body">Ink takes its shape from the printed book, and its temper from a simple idea: keep only what does the work. The constraints point the same way: attention left free, nothing decorative, and margins treated as part of the page rather than room to fill.</p>
+      <div class="grid3">
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6 C9.5 4.5 6 4 3 5 V19 C6 18 9.5 18.5 12 20 C14.5 18.5 18 18 21 19 V5 C18 4 14.5 4.5 12 6 Z M12 6 V20"/></svg></p><h3 class="ink-h3">The printed page.</h3><p class="ink-body ink-secondary">Five centuries of books settled what reading needs: a measure, a margin, a running head, a folio, and pages that end. Ink keeps all of it.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 L6 14.5 L15 5.5 L18.5 9 L9.5 18 Z M13 7.5 L16.5 11"/></svg></p><h3 class="ink-h3">Ink, and nothing else.</h3><p class="ink-body ink-secondary">One ink, one paper and the grays between them. With no color to decorate with, what is said has to carry the page.</p></div>
+        <div class="ink-card"><p class="principle__glyph"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5 V4.5 M12 19.5 V21.5 M2.5 12 H4.5 M19.5 12 H21.5 M5.3 5.3 L6.7 6.7 M17.3 17.3 L18.7 18.7 M5.3 18.7 L6.7 17.3 M17.3 6.7 L18.7 5.3"/></svg></p><h3 class="ink-h3">Simplicity, simplicity.</h3><p class="ink-body ink-secondary">“Simplicity, simplicity, simplicity!” Thoreau wrote, in a house he built himself by a pond. Ink is built the same way: few parts, each doing its work.</p></div>
+      </div>
+      <p class="ink-body">Ink also keeps the laws of the <a class="ink-link" href="https://ahimsa-design.riverma.com">Ahimsa design system</a> unchanged. Nothing appears unasked, there is no red, components read semantic tokens only, corners stay rounded, and nothing is loaded over a network.</p>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

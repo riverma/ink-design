@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>Foundations — Ink Design System</title>
+<meta name="description" content="Gray levels, type, strokes, icons and change in Ink.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html">Overview</a>
+      <a class="ink-link" href="principles.html">Principles</a>
+      <a class="ink-link" href="foundations.html" aria-current="page">Foundations</a>
+      <a class="ink-link" href="components.html">Components</a>
+      <a class="ink-link" href="themer.html">Themer</a>
+      <a class="ink-link" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero hero--slim">
+      <div class="hero__copy">
+        <p class="ink-caps">Foundations</p>
+        <h1 class="ink-title">Sixteen grays and two typefaces.</h1>
+        <p class="ink-lead">Sixteen grays are the palette. There are three stroke weights, thirteen drawn icons and one kind of change: a press. To try other typefaces, open the <a class="ink-link" href="themer.html">themer</a>.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="levels">
+      <p class="ink-caps">Levels</p>
+      <h2 class="ink-h2">Sixteen grays, and no more</h2>
+      <p class="ink-body">The palette is sixteen grays, from 0x00 to 0xFF in steps of 0x11, like ink ground with more or less water. Every color in Ink is one of them, and <code>tools/check-stillness.mjs</code> fails anything else. Each mode uses six, so every page keeps one quiet register.</p>
+      <div class="levels" aria-label="The sixteen gray levels">
+          <div class="lv" style="background:#000000;color:#ffffff"><span>0</span><span class="lv__use">full range</span><code>#000000</code></div>
+          <div class="lv" style="background:#111111;color:#ffffff"><span>1</span><span class="lv__use">Paper · Night</span><code>#111111</code></div>
+          <div class="lv" style="background:#222222;color:#ffffff"><span>2</span><span class="lv__use">Night</span><code>#222222</code></div>
+          <div class="lv" style="background:#333333;color:#ffffff"><span>3</span><span class="lv__use"></span><code>#333333</code></div>
+          <div class="lv" style="background:#444444;color:#ffffff"><span>4</span><span class="lv__use">Paper</span><code>#444444</code></div>
+          <div class="lv" style="background:#555555;color:#ffffff"><span>5</span><span class="lv__use"></span><code>#555555</code></div>
+          <div class="lv" style="background:#666666;color:#ffffff"><span>6</span><span class="lv__use"></span><code>#666666</code></div>
+          <div class="lv" style="background:#777777;color:#000000"><span>7</span><span class="lv__use">Paper · Night</span><code>#777777</code></div>
+          <div class="lv" style="background:#888888;color:#000000"><span>8</span><span class="lv__use"></span><code>#888888</code></div>
+          <div class="lv" style="background:#999999;color:#000000"><span>9</span><span class="lv__use"></span><code>#999999</code></div>
+          <div class="lv" style="background:#aaaaaa;color:#000000"><span>10</span><span class="lv__use"></span><code>#aaaaaa</code></div>
+          <div class="lv" style="background:#bbbbbb;color:#000000"><span>11</span><span class="lv__use">Night</span><code>#bbbbbb</code></div>
+          <div class="lv" style="background:#cccccc;color:#000000"><span>12</span><span class="lv__use"></span><code>#cccccc</code></div>
+          <div class="lv" style="background:#dddddd;color:#000000"><span>13</span><span class="lv__use">Paper</span><code>#dddddd</code></div>
+          <div class="lv" style="background:#eeeeee;color:#000000"><span>14</span><span class="lv__use">Paper · Night</span><code>#eeeeee</code></div>
+          <div class="lv" style="background:#ffffff;color:#000000"><span>15</span><span class="lv__use">full range</span><code>#ffffff</code></div>
+      </div>
+    </section>
+
+    <section class="sec" id="tokens">
+      <p class="ink-caps">Semantic tokens</p>
+      <h2 class="ink-h2">What each level is for</h2>
+      <p class="ink-body">Components never name a level. They read these, so markup moves between modes untouched.</p>
+      <div class="table-wrap"><table class="tokens">
+        <thead><tr><th>Token</th><th>Paper</th><th>Night</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td><code>--surface-canvas</code></td><td><span class="sw" style="background:#eeeeee"></span><code>#eeeeee</code></td><td><span class="sw" style="background:#111111"></span><code>#111111</code></td><td>The page.</td></tr>
+          <tr><td><code>--surface-sunk</code></td><td><span class="sw" style="background:#dddddd"></span><code>#dddddd</code></td><td><span class="sw" style="background:#222222"></span><code>#222222</code></td><td>A recessed area, a code block.</td></tr>
+          <tr><td><code>--text-body</code></td><td><span class="sw" style="background:#111111"></span><code>#111111</code></td><td><span class="sw" style="background:#eeeeee"></span><code>#eeeeee</code></td><td>Everything read. Headings too.</td></tr>
+          <tr><td><code>--text-secondary</code></td><td><span class="sw" style="background:#444444"></span><code>#444444</code></td><td><span class="sw" style="background:#bbbbbb"></span><code>#bbbbbb</code></td><td>Captions and hints. Still 7:1.</td></tr>
+          <tr><td><code>--mark-muted</code></td><td><span class="sw" style="background:#777777"></span><code>#777777</code></td><td><span class="sw" style="background:#777777"></span><code>#777777</code></td><td>Idle marks: leader dots. Never type.</td></tr>
+          <tr><td><code>--rule</code></td><td><span class="sw" style="background:#999999"></span><code>#999999</code></td><td><span class="sw" style="background:#555555"></span><code>#555555</code></td><td>A decorative separator.</td></tr>
+          <tr><td><code>--border-control</code></td><td><span class="sw" style="background:#111111"></span><code>#111111</code></td><td><span class="sw" style="background:#eeeeee"></span><code>#eeeeee</code></td><td>The edge of anything you touch.</td></tr>
+          <tr><td><code>--selected-fill</code></td><td><span class="sw" style="background:#111111"></span><code>#111111</code></td><td><span class="sw" style="background:#eeeeee"></span><code>#eeeeee</code></td><td>Pressed and selected: the inversion.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="ink-body ink-secondary">Text clears 7:1 on every ground, which is AAA, so it reads for tired eyes, low vision and any light. Control edges clear 4.5:1 and idle marks 3:1. <code>tools/check-contrast.mjs</code> measures every pair in both modes, at both ranges.</p>
+    </section>
+
+    <section class="sec" id="range">
+      <p class="ink-caps">Range</p>
+      <h2 class="ink-h2">Softened, or full</h2>
+      <p class="ink-body">By default Ink keeps <a class="ink-link" href="https://ahimsa-design.riverma.com">Ahimsa</a>’s law: the ground stops at <code>#eeeeee</code> and the ink at <code>#111111</code>, so there is no glare and no smear. For the strongest contrast, add <code>ink-full</code> to <code>&lt;html&gt;</code> and the grounds open to pure paper and pure ink. Displays that report themselves as grayscale get the full range by themselves.</p>
+      <div class="range">
+        <div class="ink-paper"><p class="ink-caps">Paper · softened</p><p class="ink-h3">Walden</p><p class="ink-body ink-secondary">#111111 on #eeeeee</p></div>
+        <div class="ink-paper ink-full"><p class="ink-caps">Paper · full</p><p class="ink-h3">Walden</p><p class="ink-body ink-secondary">#000000 on #ffffff</p></div>
+        <div class="ink-night"><p class="ink-caps">Night · softened</p><p class="ink-h3">Walden</p><p class="ink-body ink-secondary">#eeeeee on #111111</p></div>
+        <div class="ink-night ink-full"><p class="ink-caps">Night · full</p><p class="ink-h3">Walden</p><p class="ink-body ink-secondary">#ffffff on #000000</p></div>
+      </div>
+      <div class="snippet"><pre tabindex="0"><code>&lt;html class=&quot;ink-paper&quot;&gt;              &lt;!-- softened: no glare, no smear --&gt;
+&lt;html class=&quot;ink-paper ink-full&quot;&gt;    &lt;!-- full range: pure paper, pure ink --&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+    </section>
+
+    <section class="sec" id="type">
+      <p class="ink-caps">Type</p>
+      <h2 class="ink-h2">The book and the device</h2>
+      <div class="ink-card specimen">
+        <p class="ink-caps">Lora · reading · <code>--font-book</code></p>
+        <p class="ink-title">Simplicity, simplicity</p>
+        <div class="ink-prose"><p class="ink-dropcap">Lora is a contemporary serif with brushed curves and moderate contrast, steady at reading sizes and warm without fuss. Ink sets it at weight 450 rather than 400, because sixteen-level anti-aliasing thins every stroke a little, and headings at 650.</p><p>Paragraphs are indented, not spaced, as in a book. Text is ragged right, hyphenated where the language allows, and runs the full width it is given unless <code>--measure</code> caps it.</p></div>
+      </div>
+      <div class="ink-card specimen">
+        <p class="ink-caps">Atkinson Hyperlegible Next · operating · <code>--font-ui</code></p>
+        <p class="legible" aria-label="Capital I, lowercase l, digit 1, capital O, digit 0, lowercase r n, lowercase m">Il1 O0 rn m</p>
+        <p class="ink-ui">Buttons, labels, folios and settings. Its letters are drawn to stay distinct at small sizes and low contrast, so a glance is enough.</p>
+      </div>
+      <div class="ink-card scale">
+        <div><code>--size-title</code><span class="ink-h1" style="font-size:var(--size-title)">Walden</span></div>
+        <div><code>--size-h1</code><span class="ink-h1">Where I Lived</span></div>
+        <div><code>--size-h2</code><span class="ink-h2">Solitude</span></div>
+        <div><code>--size-h3 / lead</code><span class="ink-h3">The Pond in Winter</span></div>
+        <div><code>--size-body</code><span class="ink-body">I went to the woods because I wished to live deliberately.</span></div>
+        <div><code>--size-ui</code><span class="ink-ui">Page 3 of 12</span></div>
+        <div><code>--size-caption</code><span class="ink-caption">Saved to your notes</span></div>
+        <div><code>--size-label</code><span class="ink-caps" style="margin:0">Contents</span></div>
+      </div>
+    </section>
+
+    <section class="sec" id="edges">
+      <p class="ink-caps">Strokes</p>
+      <h2 class="ink-h2">Depth is a rule and a margin</h2>
+      <p class="ink-body">There are no shadows. A surface is separated by a rule, a border or space. Three strokes, never thinner than one pixel.</p>
+      <div class="strokes">
+        <div class="ink-card"><span style="border-top:var(--stroke) solid var(--rule-strong)"></span><code>--stroke</code> 1px · rules and cards</div>
+        <div class="ink-card"><span style="border-top:var(--stroke-control) solid var(--rule-strong)"></span><code>--stroke-control</code> 2px · anything you touch</div>
+        <div class="ink-card"><span style="border-top:var(--stroke-focus) solid var(--rule-strong)"></span><code>--stroke-focus</code> 3px · the focus ring</div>
+      </div>
+    </section>
+
+    <section class="sec" id="icons">
+      <p class="ink-caps">Icons</p>
+      <h2 class="ink-h2">Drawn on the pixel grid</h2>
+      <p class="ink-body">Twenty-four units, a two-unit stroke on whole coordinates, round caps and joins, and no fills except the dots in contents. At 24px every line lands on a pixel, so it stays crisp. Each icon is symmetric unless the object is not, and each takes its ink from the text around it.</p>
+      <div class="icons">
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6 C9.5 4.5 6 4 3 5 V19 C6 18 9.5 18.5 12 20 C14.5 18.5 18 18 21 19 V5 C18 4 14.5 4.5 12 6 Z M12 6 V20"/></svg><figcaption class="ink-caption"><code>book</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3 H18 V21 L12 16 L6 21 Z"/></svg><figcaption class="ink-caption"><code>bookmark</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7"/></svg><figcaption class="ink-caption"><code>check</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg><figcaption class="ink-caption"><code>close</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 H20 M9 12 H20 M9 18 H20"/><circle cx="4.5" cy="6" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.25" fill="currentColor" stroke="none"/></svg><figcaption class="ink-caption"><code>contents</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5 V4.5 M12 19.5 V21.5 M2.5 12 H4.5 M19.5 12 H21.5 M5.3 5.3 L6.7 6.7 M17.3 17.3 L18.7 18.7 M5.3 18.7 L6.7 17.3 M17.3 6.7 L18.7 5.3"/></svg><figcaption class="ink-caption"><code>light</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H20 M4 12 H20 M4 18 H20"/></svg><figcaption class="ink-caption"><code>menu</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 14.5 A8 8 0 1 1 9.5 4.5 A6.5 6.5 0 0 0 19.5 14.5 Z"/></svg><figcaption class="ink-caption"><code>moon</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 L16 12 L8 20"/></svg><figcaption class="ink-caption"><code>next</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 L6 14.5 L15 5.5 L18.5 9 L9.5 18 Z M13 7.5 L16.5 11"/></svg><figcaption class="ink-caption"><code>pen</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 L8 12 L16 20"/></svg><figcaption class="ink-caption"><code>prev</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L20.5 20.5"/></svg><figcaption class="ink-caption"><code>search</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 L8 5 L13 19 M4.8 14 H11.2 M15 19 L18 10 L21 19 M16 16 H20"/></svg><figcaption class="ink-caption"><code>type</code></figcaption></figure>
+      </div>
+      <div class="snippet"><pre tabindex="0"><code>&lt;svg class=&quot;ink-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;
+     stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path d=&quot;M6 3 H18 V21 L12 16 L6 21 Z&quot;/&gt;
+&lt;/svg&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+    </section>
+
+    <section class="sec" id="change">
+      <p class="ink-caps">Change</p>
+      <h2 class="ink-h2">There is no motion</h2>
+      <p class="ink-body">Press either button. It inverts at once and comes back when you let go. That is the whole vocabulary of change. It has no duration, so there is nothing to watch, only something that happened. There are no motion tokens, and nothing to reduce for reduced motion.</p>
+      <div class="row row--gap">
+        <button class="ink-btn" type="button">Press me</button>
+        <button class="ink-btn ink-btn--primary" type="button">And me</button>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>For agents — Ink Design System</title>
+<meta name="description" content="The short brief for an agent building with Ink: what to load, the vocabulary, and the rules.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html">Overview</a>
+      <a class="ink-link" href="principles.html">Principles</a>
+      <a class="ink-link" href="foundations.html">Foundations</a>
+      <a class="ink-link" href="components.html">Components</a>
+      <a class="ink-link" href="themer.html">Themer</a>
+      <a class="ink-link" href="agents.html" aria-current="page">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero hero--slim">
+      <div class="hero__copy">
+        <p class="ink-caps">The short brief</p>
+        <h1 class="ink-title">For agents</h1>
+        <p class="ink-lead">If you are an agent building an interface with Ink, you need four things: what to load, the token and class vocabulary, the icons, and the rules you must not break. All of it is also in <code>SKILL.md</code>.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="setup">
+      <p class="ink-caps">Setup</p>
+      <h2 class="ink-h2">What to load</h2>
+      <div class="snippet"><pre tabindex="0"><code>ink-design/
+  dist/ink.css         Paper + Night, flattened, self-contained
+  dist/CHECKSUMS        sha256, for a pinned vendored copy
+  fonts/                8 woff2 + 2 OFL license texts — copy all of it
+  src/icons/*.svg       the drawn icons — inline them, never &lt;img&gt;
+  SKILL.md              this brief</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <p class="ink-body">Link <code>ink.css</code>, put <code>ink-paper</code> or <code>ink-night</code> on <code>&lt;html&gt;</code>, and copy <code>fonts/</code> next to it. With no stored choice, use Night when <code>prefers-color-scheme</code> is dark, and set the class before first paint, so the page is drawn once, not twice.</p>
+      <div class="snippet"><pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; class=&quot;ink-paper&quot;&gt;   &lt;!-- or ink-night; follow the OS until chosen --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;ink.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main class=&quot;ink-page&quot;&gt;
+    &lt;div class=&quot;ink-runninghead&quot;&gt;&lt;span&gt;Walden&lt;/span&gt;&lt;span&gt;Solitude&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;ink-prose&quot;&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;ink-folio&quot;&gt;Page 113 of 268&lt;/div&gt;
+  &lt;/main&gt;
+  &lt;nav class=&quot;ink-pager&quot; aria-label=&quot;Pages&quot;&gt;
+    &lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;…&lt;span class=&quot;ink-visually-hidden&quot;&gt;Previous page&lt;/span&gt;&lt;/button&gt;
+    &lt;span class=&quot;ink-pager__label&quot; aria-live=&quot;polite&quot;&gt;Page 113 of 268&lt;/span&gt;
+    &lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;…&lt;span class=&quot;ink-visually-hidden&quot;&gt;Next page&lt;/span&gt;&lt;/button&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+    </section>
+
+    <section class="sec" id="tokens">
+      <p class="ink-caps">Vocabulary</p>
+      <h2 class="ink-h2">Tokens: semantics only</h2>
+      <div class="snippet"><pre tabindex="0"><code>surfaces   --surface-canvas  --surface-raised  --surface-sunk  --surface-inverse
+text       --text-heading  --text-body  --text-secondary  --text-inverse
+non-text   --mark-muted (idle marks, never type)  --rule (decorative)  --rule-strong
+controls   --border-control  --focus-ring  --selected-fill / --on-selected
+levels     --gray-0..15 (for tokens only; components never name one)
+space      --space-1..9        radius  --radius-s|m|pill
+stroke     --stroke (1px)  --stroke-control (2px)  --stroke-focus (3px)
+type       --font-book (Lora)  --font-ui (Atkinson Hyperlegible Next)
+           --weight-body|ui|heading|strong  --size-label|caption|ui|body|lead|h3|h2|h1|title
+           --leading-tight|ui|body  --measure
+target     --hit (48px)
+motion     none, by design</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <div class="ink-card ink-card--sunk">
+        <p class="ink-caps">Three that will catch you out</p>
+        <p class="ink-body"><code>--mark-muted</code> is for leader dots and idle marks. Never set type in it; use <code>--text-secondary</code>, which clears 7:1.</p>
+        <p class="ink-body"><code>--border-control</code>, not <code>--rule</code>, for the edge of anything interactive.</p>
+        <p class="ink-body" style="margin:0">There are no motion, shadow or color tokens. Their absence is the design.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="classes">
+      <p class="ink-caps">Vocabulary</p>
+      <h2 class="ink-h2">The class list, complete</h2>
+      <div class="snippet"><pre tabindex="0"><code>modes      html.ink-paper  html.ink-night  [+ .ink-full for pure paper and pure ink]
+type       .ink-title  .ink-h1  .ink-h2  .ink-h3  .ink-lead  .ink-body  .ink-secondary  .ink-italic
+           .ink-ui  .ink-caption  .ink-caps  .ink-link
+prose      .ink-prose  .ink-dropcap  .ink-quote  .ink-dinkus (hr)  .ink-rule [--strong] (hr)
+reading    .ink-page  .ink-runninghead  .ink-folio  .ink-pager  .ink-pager__label
+           .ink-progress (style=&quot;--at: 40%&quot;)  .ink-toc  .ink-toc__title  .ink-toc__page  .ink-end
+actions    .ink-btn [--primary --quiet --icon --wide]  .ink-chip (aria-pressed)
+surfaces   .ink-card [--sunk]  .ink-list  .ink-list__hint
+forms      .ink-field  .ink-label  .ink-hint  .ink-input (aria-invalid)
+           .ink-check &gt; input + .ink-check__box
+           .ink-switch &gt; input + .ink-switch__track + .ink-switch__state
+feedback   .ink-notice [--note]  .ink-notice__glyph  .ink-notice__actions
+icons      .ink-icon [--l --xl]
+utility    .ink-visually-hidden</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <p class="ink-body">Variants are <code>--modifier</code>; state is an ARIA attribute or a native <code>checked</code>. Anything not on this list does not exist. In particular there is no <code>.ink-toast</code>, <code>.ink-modal</code>, <code>.ink-carousel</code>, <code>.ink-skeleton</code> or <code>.ink-badge</code>, and there will not be.</p>
+    </section>
+
+    <section class="sec" id="icons">
+      <p class="ink-caps">Art</p>
+      <h2 class="ink-h2">Icons: inline the file</h2>
+      <div class="icons">
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6 C9.5 4.5 6 4 3 5 V19 C6 18 9.5 18.5 12 20 C14.5 18.5 18 18 21 19 V5 C18 4 14.5 4.5 12 6 Z M12 6 V20"/></svg><figcaption class="ink-caption"><code>book</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3 H18 V21 L12 16 L6 21 Z"/></svg><figcaption class="ink-caption"><code>bookmark</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7"/></svg><figcaption class="ink-caption"><code>check</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg><figcaption class="ink-caption"><code>close</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 H20 M9 12 H20 M9 18 H20"/><circle cx="4.5" cy="6" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.25" fill="currentColor" stroke="none"/></svg><figcaption class="ink-caption"><code>contents</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5 V4.5 M12 19.5 V21.5 M2.5 12 H4.5 M19.5 12 H21.5 M5.3 5.3 L6.7 6.7 M17.3 17.3 L18.7 18.7 M5.3 18.7 L6.7 17.3 M17.3 6.7 L18.7 5.3"/></svg><figcaption class="ink-caption"><code>light</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H20 M4 12 H20 M4 18 H20"/></svg><figcaption class="ink-caption"><code>menu</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 14.5 A8 8 0 1 1 9.5 4.5 A6.5 6.5 0 0 0 19.5 14.5 Z"/></svg><figcaption class="ink-caption"><code>moon</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 L16 12 L8 20"/></svg><figcaption class="ink-caption"><code>next</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 L6 14.5 L15 5.5 L18.5 9 L9.5 18 Z M13 7.5 L16.5 11"/></svg><figcaption class="ink-caption"><code>pen</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 L8 12 L16 20"/></svg><figcaption class="ink-caption"><code>prev</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L20.5 20.5"/></svg><figcaption class="ink-caption"><code>search</code></figcaption></figure>
+        <figure class="ink-card icon-cell"><svg class="ink-icon ink-icon--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 L8 5 L13 19 M4.8 14 H11.2 M15 19 L18 10 L21 19 M16 16 H20"/></svg><figcaption class="ink-caption"><code>type</code></figcaption></figure>
+      </div>
+      <div class="snippet"><pre tabindex="0"><code>&lt;!-- paste the contents of src/icons/bookmark.svg --&gt;
+&lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;&lt;svg class=&quot;ink-icon&quot; viewBox=&quot;0 0 24 24&quot; …&gt;…&lt;/svg&gt;&lt;span class=&quot;ink-visually-hidden&quot;&gt;Bookmark this page&lt;/span&gt;&lt;/button&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+    </section>
+
+    <section class="sec" id="rules">
+      <p class="ink-caps">Constraints</p>
+      <h2 class="ink-h2">Not negotiable</h2>
+      <ol class="agent-rules">
+        <li class="ink-body"><strong>Use only the sixteen gray levels, through semantic tokens.</strong> No hue, no <code>rgba()</code>, no <code>color-mix()</code>, no partial opacity. Components read tokens like <code>--text-secondary</code>, never <code>--gray-4</code>, so markup works in both modes.</li>
+        <li class="ink-body"><strong>Nothing moves.</strong> No <code>transition</code>, <code>animation</code>, <code>@keyframes</code> or smooth scroll. Change state in one step. The pressed inversion is built in.</li>
+        <li class="ink-body"><strong>Page long content; don’t scroll it.</strong> Use <code>.ink-page</code> and <code>.ink-pager</code> with the count in view, keep the controls in the same place on every page, and finish with <code>.ink-end</code>. No infinite feeds, no carousels.</li>
+        <li class="ink-body"><strong>Nothing soft.</strong> No gradient, <code>box-shadow</code>, <code>text-shadow</code>, blur or filter. Separate things with a rule, a border or space.</li>
+        <li class="ink-body"><strong>Nothing on hover.</strong> Every control is visible and labeled at rest, at least 48px (<code>--hit</code>).</li>
+        <li class="ink-body"><strong>Nothing updates itself.</strong> No ticking clocks, live counters, shimmering skeletons or polling. No modal on load, no toast, no <code>role="alert"</code>, no <code>aria-live="assertive"</code>, no <code>setInterval</code>, no autoplay, no <code>autofocus</code>. A notice sits where the person caused it.</li>
+        <li class="ink-body"><strong>Meaning never rests on gray alone.</strong> Say it in words; then use shape, fill and border style. Dashed means look again. A switch shows On or Off as text.</li>
+        <li class="ink-body"><strong>No red, no punishment.</strong> A problem is <code>aria-invalid="true"</code> (dashed edge) plus a hint that says what to do. Offer undo after anything that changes something.</li>
+        <li class="ink-body"><strong>Lora for reading, Atkinson Hyperlegible Next for operating.</strong> No weight below 400 anywhere. Long text goes in <code>.ink-prose</code>, on a plain surface.</li>
+        <li class="ink-body"><strong>No emoji.</strong> Inline an icon from <code>src/icons/</code> (book, bookmark, check, close, contents, light, menu, moon, next, pen, prev, search, type), <code>aria-hidden="true"</code>, with the meaning in the text or a visually hidden label. If none fits, draw one the same way: 24-unit grid, 2-unit <code>currentColor</code> stroke on whole coordinates, round caps and joins, no fills.</li>
+        <li class="ink-body"><strong>Never load anything over a network,</strong> and never disable pinch zoom.</li>
+      </ol>
+      <p class="ink-body">Most of these are checked: run <code>npm run check</code>. If a requirement you have been given conflicts with one of them, say so rather than resolving it quietly. The conflict is usually the most useful thing you have found.</p>
+    </section>
+
+    <section class="sec" id="voice">
+      <p class="ink-caps">Copy</p>
+      <h2 class="ink-h2">Write it like this</h2>
+      <div class="snippet"><pre tabindex="0"><code>Page 3 of 12                         not  Keep going! Only 9 left!
+That’s the end of the chapter.       not  Next chapter starts in 5… 4… 3…
+Bookmarked. Page 113.                not  Saved! (a toast that slides in)
+Your notes didn’t sync. Nothing      not  ERROR: Sync failed
+is lost.
+This book ends on page 268.          not  Invalid input</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <p class="ink-body">Plain, quiet and exact, like the front matter of a good book. Sentence case. Say where the person is and what is there; never hurry them, never count down, never cheer.</p>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

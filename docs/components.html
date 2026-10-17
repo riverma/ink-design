@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="ink-paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eeeeee">
+<meta name="color-scheme" content="light dark">
+<title>Components — Ink Design System</title>
+<meta name="description" content="Buttons, chips, pages, contents, lists, forms and notices.">
+<script>(function(){var r=document.documentElement,m='paper';try{var s=localStorage.getItem('ink-theme');if(s==='paper'||s==='night'){m=s;}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){m='night';}var t=JSON.parse(localStorage.getItem('ink-themer')||'null');if(t){for(var k in t){if(/^--[a-z-]+$/.test(k))r.style.setProperty(k,t[k]);}}}catch(e){}r.className='ink-'+m;})();</script>
+<link rel="stylesheet" href="ink.css">
+<link rel="stylesheet" href="themer-fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ink-visually-hidden" href="#main">Skip to content</a>
+<div class="site">
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ink</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ink-link" href="index.html">Overview</a>
+      <a class="ink-link" href="principles.html">Principles</a>
+      <a class="ink-link" href="foundations.html">Foundations</a>
+      <a class="ink-link" href="components.html" aria-current="page">Components</a>
+      <a class="ink-link" href="themer.html">Themer</a>
+      <a class="ink-link" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Mode">
+      <button class="ink-chip" type="button" data-theme-btn="paper" aria-pressed="true">Paper</button>
+      <button class="ink-chip" type="button" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero hero--slim">
+      <div class="hero__copy">
+        <p class="ink-caps">Components</p>
+        <h1 class="ink-title">Everything here holds still.</h1>
+        <p class="ink-lead">Press anything. It inverts and comes back. Nothing on this page changes unless you touch it.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="actions">
+      <p class="ink-caps">Actions</p>
+      <h2 class="ink-h2">Buttons and chips</h2>
+      <div class="spec">
+        <p class="ink-caps">Button</p>
+        <div class="spec__demo"><div class="row row--gap"><button class="ink-btn ink-btn--primary" type="button">Open book</button><button class="ink-btn" type="button">Contents</button><button class="ink-btn ink-btn--quiet" type="button">Not now</button><button class="ink-btn" type="button" disabled>Unavailable</button></div>
+        <div class="row row--gap"><button class="ink-btn ink-btn--icon" type="button"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H20 M4 12 H20 M4 18 H20"/></svg><span class="ink-visually-hidden">Menu</span></button><button class="ink-btn ink-btn--icon" type="button"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L20.5 20.5"/></svg><span class="ink-visually-hidden">Search</span></button><button class="ink-btn ink-btn--icon" type="button"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3 H18 V21 L12 16 L6 21 Z"/></svg><span class="ink-visually-hidden">Bookmark this page</span></button><button class="ink-btn" type="button"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 L8 5 L13 19 M4.8 14 H11.2 M15 19 L18 10 L21 19 M16 16 H20"/></svg> Text size</button></div></div>
+        <p class="ink-body ink-secondary">One primary per view: the thing the page is for. Every button is at least 48px square, so it is easy to hit with a finger or a shaking hand. Disabled goes dashed, not faint, so it stays readable.</p>
+      <div class="snippet"><pre tabindex="0"><code>&lt;button class=&quot;ink-btn ink-btn--primary&quot;&gt;Open book&lt;/button&gt;
+&lt;button class=&quot;ink-btn&quot;&gt;Contents&lt;/button&gt;
+&lt;button class=&quot;ink-btn ink-btn--quiet&quot;&gt;Not now&lt;/button&gt;
+&lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;&lt;svg class=&quot;ink-icon&quot; …/&gt;&lt;span class=&quot;ink-visually-hidden&quot;&gt;Menu&lt;/span&gt;&lt;/button&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      </div>
+      <div class="spec">
+        <p class="ink-caps">Chip</p>
+        <div class="spec__demo"><div class="row" role="group" aria-label="Turn pages by" data-chips><button class="ink-chip" type="button" aria-pressed="true">Tap</button><button class="ink-chip" type="button" aria-pressed="false">Swipe</button><button class="ink-chip" type="button" aria-pressed="false">Side buttons</button></div></div>
+        <p class="ink-body ink-secondary">One choice among a few. <code>aria-pressed</code> carries the state. A chosen chip inverts and draws a check, so it reads without being compared to its neighbors.</p>
+      <div class="snippet"><pre tabindex="0"><code>&lt;button class=&quot;ink-chip&quot; aria-pressed=&quot;true&quot;&gt;Tap&lt;/button&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      </div>
+      <div class="spec">
+        <p class="ink-caps">Link</p>
+        <div class="spec__demo"><p class="ink-body">Read <a class="ink-link" href="principles.html">what Ink refuses</a> first.</p></div>
+
+      <div class="snippet"><pre tabindex="0"><code>&lt;a class=&quot;ink-link&quot; href=&quot;…&quot;&gt;what Ink refuses&lt;/a&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      </div>
+    </section>
+
+    <section class="sec" id="reading">
+      <p class="ink-caps">Reading</p>
+      <h2 class="ink-h2">Pages, not scroll</h2>
+      <p class="ink-body"><code>.ink-page</code> is a running head, the text and a folio. <code>.ink-pager</code> turns it, with the count always in view, and the controls never move between pages. When the set runs out, <code>.ink-end</code> says so. Try it.</p>
+      <div class="spec__demo">
+        <div class="reader" data-reader data-i="0">
+          <div class="ink-page">
+            <div class="ink-runninghead"><span>Walden</span><span data-reader-chapter>Where I Lived, and What I Lived For</span></div>
+            <div class="reader__stage">
+              <div class="ink-prose" data-page data-chapter="Where I Lived, and What I Lived For"><p class="ink-dropcap">I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p></div>
+              <div class="ink-prose" data-page data-chapter="Where I Lived, and What I Lived For" hidden><p>Our life is frittered away by detail. An honest man has hardly need to count more than his ten fingers, or in extreme cases he may add his ten toes, and lump the rest. Simplicity, simplicity, simplicity!</p></div>
+              <div class="ink-prose" data-page data-chapter="Where I Lived, and What I Lived For" hidden><p>Time is but the stream I go a-fishing in. I drink at it; but while I drink I see the sandy bottom and detect how shallow it is. Its thin current slides away, but eternity remains.</p></div>
+              <div class="ink-prose" data-page data-chapter="Solitude" hidden><p>I never found the companion that was so companionable as solitude.</p></div>
+              <div class="ink-prose" data-page data-chapter="Conclusion" hidden><p>If a man does not keep pace with his companions, perhaps it is because he hears a different drummer. Let him step to the music which he hears, however measured or far away.</p></div>
+              <div class="ink-end" data-reader-end hidden>
+                <p class="ink-h3">End of the excerpt</p>
+                <p class="ink-caption">Five pages from Walden, by Henry David Thoreau, 1854.</p>
+                <button class="ink-btn" type="button" data-reader-restart>Back to the first page</button>
+              </div>
+            </div>
+            <div class="ink-progress" style="--at:20%" data-reader-progress aria-hidden="true"></div>
+          </div>
+          <div class="ink-pager">
+            <button class="ink-btn ink-btn--icon" type="button" data-reader-prev disabled><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 L8 12 L16 20"/></svg><span class="ink-visually-hidden">Previous page</span></button>
+            <span class="ink-pager__label" data-reader-label aria-live="polite">Page 1 of 5</span>
+            <button class="ink-btn ink-btn--icon" type="button" data-reader-next><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 L16 12 L8 20"/></svg><span class="ink-visually-hidden">Next page</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="snippet"><pre tabindex="0"><code>&lt;div class=&quot;ink-page&quot;&gt;
+  &lt;div class=&quot;ink-runninghead&quot;&gt;&lt;span&gt;Walden&lt;/span&gt;&lt;span&gt;Solitude&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;ink-prose&quot;&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;
+  &lt;div class=&quot;ink-progress&quot; style=&quot;--at: 40%&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ink-pager&quot;&gt;
+  &lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;…Previous page&lt;/button&gt;
+  &lt;span class=&quot;ink-pager__label&quot; aria-live=&quot;polite&quot;&gt;Page 113 of 268&lt;/span&gt;
+  &lt;button class=&quot;ink-btn ink-btn--icon&quot;&gt;…Next page&lt;/button&gt;
+&lt;/div&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      <div class="spec">
+        <p class="ink-caps">Contents</p>
+        <div class="spec__demo"><ol class="ink-toc">
+          <li><a href="#reading"><span class="ink-toc__title">Economy</span><span class="ink-toc__page">1</span></a></li>
+          <li><a href="#reading" aria-current="true"><span class="ink-toc__title">Where I Lived, and What I Lived For</span><span class="ink-toc__page">71</span></a></li>
+          <li><a href="#reading"><span class="ink-toc__title">Reading</span><span class="ink-toc__page">89</span></a></li>
+          <li><a href="#reading"><span class="ink-toc__title">Sounds</span><span class="ink-toc__page">97</span></a></li>
+          <li><a href="#reading"><span class="ink-toc__title">Solitude</span><span class="ink-toc__page">113</span></a></li>
+          <li><a href="#reading"><span class="ink-toc__title">Visitors</span><span class="ink-toc__page">121</span></a></li>
+        </ol></div>
+        <p class="ink-body ink-secondary">Titles, dot leaders in <code>--mark-muted</code>, and page numbers. The current section is set bold.</p>
+      <div class="snippet"><pre tabindex="0"><code>&lt;ol class=&quot;ink-toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;…&quot;&gt;&lt;span class=&quot;ink-toc__title&quot;&gt;Solitude&lt;/span&gt;&lt;span class=&quot;ink-toc__page&quot;&gt;113&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      </div>
+      <div class="spec">
+        <p class="ink-caps">Prose details</p>
+        <div class="spec__demo"><div class="ink-prose">
+          <p class="ink-dropcap">A drop capital opens a chapter, three lines deep.</p>
+          <blockquote class="ink-quote"><p>I never found the companion that was so companionable as solitude.</p></blockquote>
+          <hr class="ink-dinkus">
+          <p>A dinkus marks a break inside a chapter. A rule, <code>.ink-rule</code>, divides things that aren’t prose.</p>
+        </div></div>
+
+      <div class="snippet"><pre tabindex="0"><code>&lt;p class=&quot;ink-dropcap&quot;&gt;…&lt;/p&gt;
+&lt;blockquote class=&quot;ink-quote&quot;&gt;…&lt;/blockquote&gt;
+&lt;hr class=&quot;ink-dinkus&quot;&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+      </div>
+    </section>
+
+    <section class="sec" id="settings">
+      <p class="ink-caps">Settings</p>
+      <h2 class="ink-h2">Lists, switches and checks</h2>
+      <div class="grid2">
+        <div>
+          <ul class="ink-list">
+            <li><span id="set-bold">Bold text<span class="ink-list__hint">Heavier strokes for small sizes</span></span><label class="ink-switch"><input type="checkbox" aria-labelledby="set-bold"><span class="ink-switch__track"></span><span class="ink-switch__state" aria-hidden="true">Off</span></label></li>
+            <li><span id="set-awake">Keep the screen awake while reading<span class="ink-list__hint">Only while a book is open</span></span><label class="ink-switch"><input type="checkbox" checked aria-labelledby="set-awake"><span class="ink-switch__track"></span><span class="ink-switch__state" aria-hidden="true">On</span></label></li>
+            <li><label class="ink-check"><input type="checkbox" checked><span class="ink-check__box"></span>Show page numbers</label></li>
+            <li><label class="ink-check"><input type="checkbox"><span class="ink-check__box"></span>Show time left in chapter</label></li>
+          </ul>
+        </div>
+        <div class="stack">
+          <p class="ink-body ink-secondary">A switch says <strong>On</strong> or <strong>Off</strong> in words beside it, and its track fills when on. A check is drawn in its box. Neither state depends on gray alone, and neither moves: the knob is simply on the other side.</p>
+        </div>
+      </div>
+      <div class="snippet"><pre tabindex="0"><code>&lt;span id=&quot;set-awake&quot;&gt;Keep the screen awake while reading&lt;/span&gt;
+&lt;label class=&quot;ink-switch&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; checked aria-labelledby=&quot;set-awake&quot;&gt;
+  &lt;span class=&quot;ink-switch__track&quot;&gt;&lt;/span&gt;&lt;span class=&quot;ink-switch__state&quot; aria-hidden=&quot;true&quot;&gt;On&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;ink-check&quot;&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;span class=&quot;ink-check__box&quot;&gt;&lt;/span&gt;Show page numbers&lt;/label&gt;</code></pre><button class="ink-btn ink-btn--quiet snippet__copy" type="button" data-copy>Copy</button></div>
+    </section>
+
+    <section class="sec" id="forms">
+      <p class="ink-caps">Input</p>
+      <h2 class="ink-h2">Fields</h2>
+      <div class="grid2">
+        <div class="ink-card stack">
+          <div class="ink-field"><label class="ink-label" for="q">Search this book</label><input class="ink-input" id="q" placeholder="A word or a phrase"><span class="ink-hint">Searches all 18 chapters.</span></div>
+          <div class="ink-field"><label class="ink-label" for="pg">Go to page</label><input class="ink-input" id="pg" value="400" inputmode="numeric" aria-invalid="true" aria-describedby="pg-h"><span class="ink-hint" id="pg-h">This book ends on page 268.</span></div>
+        </div>
+        <p class="ink-body ink-secondary">Labels are always visible, above the field. Something to look at goes dashed and says what to do, in words. There is no red, no shake and no icon-only error.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="feedback">
+      <p class="ink-caps">Feedback</p>
+      <h2 class="ink-h2">Notices that stay put</h2>
+      <div class="stack">
+        <div class="ink-notice"><span class="ink-notice__glyph"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3 H18 V21 L12 16 L6 21 Z"/></svg></span><div><strong>Bookmarked.</strong> Page 113, Solitude.</div><div class="ink-notice__actions"><button class="ink-btn ink-btn--quiet" type="button">Undo</button></div></div>
+        <div class="ink-notice ink-notice--note"><span class="ink-notice__glyph"><svg class="ink-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6 C9.5 4.5 6 4 3 5 V19 C6 18 9.5 18.5 12 20 C14.5 18.5 18 18 21 19 V5 C18 4 14.5 4.5 12 6 Z M12 6 V20"/></svg></span><div><strong>Your notes didn’t sync.</strong> Nothing is lost. They will sync the next time you connect.</div><div class="ink-notice__actions"><button class="ink-btn" type="button">Try now</button></div></div>
+      </div>
+      <p class="ink-body ink-secondary">A notice sits in the page where the person caused it. It never slides in, never times out and is never announced assertively. A toast decides when the reader has read it; a notice lets them decide.</p>
+    </section>
+
+    <section class="sec" id="surfaces">
+      <p class="ink-caps">Surfaces</p>
+      <h2 class="ink-h2">Cards</h2>
+      <div class="grid2">
+        <div class="ink-card"><p class="ink-caps">.ink-card</p><h3 class="ink-h3">A ruled card</h3><p class="ink-body ink-secondary">A one-pixel ink border and space. No shadow.</p></div>
+        <div class="ink-card ink-card--sunk"><p class="ink-caps">.ink-card--sunk</p><h3 class="ink-h3">A recessed card</h3><p class="ink-body ink-secondary">One level down, with no border at all.</p></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <hr class="ink-dinkus">
+    <p class="ink-caption">Ink Design System v0.1.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ink-caption">No analytics. No cookies. Nothing here is loaded over a network, and nothing here changes by itself.</p>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>
