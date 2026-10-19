@@ -4,9 +4,9 @@ All notable changes to this project are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project
 uses [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - 2026-10-16
+## [1.0.0] - 2026-10-19
 
-First draft of Ink, a calm design system for reading.
+First release of Ink, a calm design system for reading.
 
 ### Added
 

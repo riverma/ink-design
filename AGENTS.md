@@ -59,11 +59,11 @@ and prove it still catches a planted violation.
 
 ## Releases
 
-Semantic versioning. The project is at `0.x` while the design settles, and
-`v1.0.0` is the first stable release. Patch for a fix, minor for a feature,
-major for a breaking change; moving a token's value is breaking. Keep
-`package.json` and `CHANGELOG.md` in step (the docs footer reads
-`package.json`).
+Semantic versioning, `vMAJOR.MINOR.PATCH`, from `v1.0.0`. Patch for a fix,
+minor for a feature, major for a breaking change; moving a token's value is
+breaking. Keep `package.json` and `CHANGELOG.md` in step (the docs footer
+reads `package.json`), and cut a GitHub release on every major and minor
+bump.
 
 Never push without an explicit go-ahead. Share screenshots of visual
 changes first, and review the diff for secrets before any push. Commit
